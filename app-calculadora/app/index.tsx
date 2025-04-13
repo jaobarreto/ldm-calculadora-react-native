@@ -1,10 +1,10 @@
-import { View } from 'react-native';
-import CalculatorScreen from '../../components/CalculatorScreen';
+import { CalculatorScreen } from '../components/CalculatorScreen';
+import { ThemedView } from '../components/ThemedView';
 
 export default function HomeScreen() {
   return (
-    <View style={{ flex: 1 }}>
+    <ThemedView style={{ flex: 1 }}>
       <CalculatorScreen />
-    </View>
+    </ThemedView>
   );
 }
