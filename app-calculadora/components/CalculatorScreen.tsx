@@ -9,7 +9,7 @@ import { ThemedView } from './ThemedView';
 export const CalculatorScreen: React.FC = () => {
   const [value1, setValue1] = useState('');
   const [value2, setValue2] = useState('');
-  const [result, setResult] = useState('');
+  const [result, setResult] = useState<string | null>(null);
   const [operation, setOperation] = useState('+');
 
   const calculate = () => {
@@ -55,7 +55,7 @@ export const CalculatorScreen: React.FC = () => {
           <Button title="/" onPress={() => handleOperationPress('/')} isActive={operation === '/'} />
         </View>
   
-        <Display value={result} />
+        <Display value={result !== null ? result : 'Clique em "Calcular"'} />
   
         <TouchableOpacity style={styles.calculateButton} onPress={calculate}>
           <Text style={styles.calculateButtonText}>Calcular</Text>
