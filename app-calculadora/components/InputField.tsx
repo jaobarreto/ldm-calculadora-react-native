@@ -16,6 +16,8 @@ export const InputField: React.FC<InputFieldProps> = ({ label, value, onChangeTe
         value={value}
         onChangeText={onChangeText}
         keyboardType="numeric"
+        blurOnSubmit={true}
+        returnKeyType="done"
       />
     </View>
   );

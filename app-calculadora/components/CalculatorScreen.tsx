@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Keyboard, TouchableWithoutFeedback } from 'react-native';
 import { View, TouchableOpacity, StyleSheet, Text } from 'react-native';
 import { Button } from './Button';
 import { Display } from './Display';
@@ -42,23 +43,25 @@ export const CalculatorScreen: React.FC = () => {
   };
 
   return (
-    <ThemedView style={styles.container}>
-      <InputField label="Valor 1" value={value1} onChangeText={setValue1} />
-      <InputField label="Valor 2" value={value2} onChangeText={setValue2} />
-
-      <View style={styles.operationsContainer}>
-        <Button title="+" onPress={() => handleOperationPress('+')} isActive={operation === '+'} />
-        <Button title="-" onPress={() => handleOperationPress('-')} isActive={operation === '-'} />
-        <Button title="*" onPress={() => handleOperationPress('*')} isActive={operation === '*'} />
-        <Button title="/" onPress={() => handleOperationPress('/')} isActive={operation === '/'} />
-      </View>
-
-      <Display value={result} />
-
-      <TouchableOpacity style={styles.calculateButton} onPress={calculate}>
-        <Text style={styles.calculateButtonText}>Calcular</Text>
-      </TouchableOpacity>
-    </ThemedView>
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
+      <ThemedView style={styles.container}>
+        <InputField label="Valor 1" value={value1} onChangeText={setValue1} />
+        <InputField label="Valor 2" value={value2} onChangeText={setValue2} />
+  
+        <View style={styles.operationsContainer}>
+          <Button title="+" onPress={() => handleOperationPress('+')} isActive={operation === '+'} />
+          <Button title="-" onPress={() => handleOperationPress('-')} isActive={operation === '-'} />
+          <Button title="*" onPress={() => handleOperationPress('*')} isActive={operation === '*'} />
+          <Button title="/" onPress={() => handleOperationPress('/')} isActive={operation === '/'} />
+        </View>
+  
+        <Display value={result} />
+  
+        <TouchableOpacity style={styles.calculateButton} onPress={calculate}>
+          <Text style={styles.calculateButtonText}>Calcular</Text>
+        </TouchableOpacity>
+      </ThemedView>
+    </TouchableWithoutFeedback>
   );
 };
 
