@@ -16,8 +16,8 @@ Antes de começar, verifique se você tem instalado em sua máquina:
 1. **Clone o repositório**
 
 ```bash
-git clone https://github.com/seu-usuario/calculadora-react-native.git
-cd calculadora-react-native
+git clone https://github.com/jaobarreto/ldm-calculadora-react-native.git
+cd app-calculadora
 ```
 
 2. **Instale as dependências**
@@ -70,7 +70,7 @@ yarn start
 ## 📦 Estrutura do Projeto
 
 ```
-/src
+/app-calculadora
 ├── components
 │   ├── Button.tsx
 │   ├── CalculatorScreen.tsx
